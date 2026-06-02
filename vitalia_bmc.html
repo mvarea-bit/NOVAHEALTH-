@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1400">
+<title>Vitalia AI — Business Model Canvas</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --bg: #0B0C10;
+  --surface: #13141A;
+  --surface2: #1C1D25;
+  --border: rgba(255,255,255,0.07);
+  --border2: rgba(255,255,255,0.12);
+  --text: #E8E9F0;
+  --muted: #6B6E85;
+  --dim: #3A3D52;
+
+  --blue: #3B82F6;
+  --blue-dim: rgba(59,130,246,0.12);
+  --teal: #14B8A6;
+  --teal-dim: rgba(20,184,166,0.12);
+  --purple: #A78BFA;
+  --purple-dim: rgba(167,139,250,0.12);
+  --amber: #F59E0B;
+  --amber-dim: rgba(245,158,11,0.12);
+  --rose: #FB7185;
+  --rose-dim: rgba(251,113,133,0.12);
+  --green: #4ADE80;
+  --green-dim: rgba(74,222,128,0.10);
+  --cyan: #22D3EE;
+  --cyan-dim: rgba(34,211,238,0.10);
+  --slate: #94A3B8;
+  --slate-dim: rgba(148,163,184,0.08);
+  --indigo: #818CF8;
+  --indigo-dim: rgba(129,140,248,0.12);
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'DM Sans', sans-serif;
+  min-height: 100vh;
+  padding: 32px;
+}
+
+/* HEADER */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 24px;
+  padding-bottom: 20px;
+  border-bottom: 0.5px solid var(--border2);
+}
+.brand { display: flex; align-items: center; gap: 14px; }
+.logo {
+  width: 44px; height: 44px;
+  background: linear-gradient(135deg, #3B82F6 0%, #8B5CF6 100%);
+  border-radius: 10px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 20px; font-weight: 500; color: #fff;
+  letter-spacing: -0.5px;
+}
+.brand-text h1 { font-size: 20px; font-weight: 500; letter-spacing: -0.3px; color: var(--text); }
+.brand-text p { font-size: 12px; color: var(--muted); margin-top: 2px; font-weight: 300; }
+
+.header-tags { display: flex; gap: 8px; align-items: center; }
+.tag {
+  font-size: 11px; font-weight: 500;
+  padding: 4px 12px; border-radius: 20px;
+  border: 0.5px solid var(--border2);
+  color: var(--muted);
+  font-family: 'DM Mono', monospace;
+  letter-spacing: 0.03em;
+}
+.tag.highlight { border-color: var(--blue); color: var(--blue); background: var(--blue-dim); }
+
+/* CANVAS GRID */
+.canvas {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1.3fr 1fr 1fr;
+  grid-template-rows: auto auto auto;
+  gap: 6px;
+}
+
+/* BLOCK BASE */
+.block {
+  background: var(--surface);
+  border: 0.5px solid var(--border);
+  border-radius: 14px;
+  padding: 18px 18px 16px;
+  position: relative;
+  overflow: hidden;
+}
+.block::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  border-radius: 14px 14px 0 0;
+}
+.block.blue::before { background: var(--blue); }
+.block.teal::before { background: var(--teal); }
+.block.purple::before { background: var(--purple); }
+.block.amber::before { background: var(--amber); }
+.block.rose::before { background: var(--rose); }
+.block.green::before { background: var(--green); }
+.block.cyan::before { background: var(--cyan); }
+.block.slate::before { background: var(--slate); }
+.block.indigo::before { background: var(--indigo); }
+
+.block-label {
+  font-size: 9px; font-weight: 500;
+  letter-spacing: 0.1em; text-transform: uppercase;
+  color: var(--muted); margin-bottom: 10px;
+  font-family: 'DM Mono', monospace;
+  display: flex; align-items: center; gap: 6px;
+}
+.block-label .dot {
+  width: 5px; height: 5px; border-radius: 50%;
+  flex-shrink: 0;
+}
+.blue .dot { background: var(--blue); }
+.teal .dot { background: var(--teal); }
+.purple .dot { background: var(--purple); }
+.amber .dot { background: var(--amber); }
+.rose .dot { background: var(--rose); }
+.green .dot { background: var(--green); }
+.cyan .dot { background: var(--cyan); }
+.slate .dot { background: var(--slate); }
+.indigo .dot { background: var(--indigo); }
+
+.items { list-style: none; display: flex; flex-direction: column; gap: 6px; }
+.items li {
+  font-size: 12px; color: #C4C6D6;
+  display: flex; align-items: flex-start; gap: 7px;
+  line-height: 1.45; font-weight: 300;
+}
+.items li::before {
+  content: '';
+  width: 3px; height: 3px; border-radius: 50%;
+  background: var(--dim);
+  flex-shrink: 0; margin-top: 5px;
+}
+
+.section-divider {
+  font-size: 9px; letter-spacing: 0.08em;
+  text-transform: uppercase; color: var(--dim);
+  font-family: 'DM Mono', monospace;
+  margin: 10px 0 6px; font-weight: 400;
+}
+
+/* GRID PLACEMENT */
+.partners    { grid-column: 1; grid-row: 1 / span 2; }
+.activities  { grid-column: 2; grid-row: 1; }
+.vp          { grid-column: 3; grid-row: 1 / span 2; }
+.relation    { grid-column: 4; grid-row: 1; }
+.segments    { grid-column: 5; grid-row: 1 / span 2; }
+.resources   { grid-column: 2; grid-row: 2; }
+.channels    { grid-column: 4; grid-row: 2; }
+.costs       { grid-column: 1 / span 3; grid-row: 3; }
+.revenue     { grid-column: 3 / span 3; grid-row: 3; }
+
+/* VP BLOCK special */
+.vp-card {
+  background: var(--surface2);
+  border: 0.5px solid var(--border2);
+  border-radius: 10px;
+  padding: 12px 14px;
+  margin-bottom: 12px;
+}
+.vp-headline { font-size: 14px; font-weight: 500; color: var(--text); line-height: 1.4; letter-spacing: -0.2px; }
+.vp-sub { font-size: 11px; color: var(--muted); margin-top: 4px; font-weight: 300; line-height: 1.5; }
+
+.pills { display: flex; flex-wrap: wrap; gap: 4px; margin-bottom: 12px; }
+.pill {
+  font-size: 10px; font-weight: 500;
+  padding: 3px 9px; border-radius: 20px;
+  letter-spacing: 0.01em;
+}
+.p-blue   { background: var(--blue-dim);   color: #93BBFC; border: 0.5px solid rgba(59,130,246,0.25); }
+.p-teal   { background: var(--teal-dim);   color: #5EEAD4; border: 0.5px solid rgba(20,184,166,0.25); }
+.p-purple { background: var(--purple-dim); color: #C4B5FD; border: 0.5px solid rgba(167,139,250,0.25); }
+.p-rose   { background: var(--rose-dim);   color: #FDA4AF; border: 0.5px solid rgba(251,113,133,0.25); }
+.p-amber  { background: var(--amber-dim);  color: #FCD34D; border: 0.5px solid rgba(245,158,11,0.25); }
+
+/* KPIs */
+.kpi-row { display: flex; gap: 6px; margin-top: 12px; }
+.kpi { flex: 1; background: var(--surface2); border-radius: 8px; padding: 8px 10px; text-align: center; border: 0.5px solid var(--border); }
+.kpi-val { font-size: 17px; font-weight: 500; color: var(--text); letter-spacing: -0.5px; }
+.kpi-label { font-size: 9px; color: var(--muted); margin-top: 3px; font-family: 'DM Mono', monospace; letter-spacing: 0.06em; text-transform: uppercase; }
+
+/* REVENUE CARDS */
+.rev-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px; margin-top: 10px; }
+.rev-card {
+  background: var(--surface2);
+  border: 0.5px solid var(--border);
+  border-radius: 10px; padding: 10px 12px;
+}
+.rev-card-label { font-size: 10px; color: var(--muted); margin-bottom: 4px; font-family: 'DM Mono', monospace; letter-spacing: 0.03em; }
+.rev-card-val { font-size: 15px; font-weight: 500; color: var(--green); letter-spacing: -0.3px; }
+.rev-sub { font-size: 10px; color: var(--dim); margin-top: 10px; font-weight: 300; line-height: 1.6; }
+.rev-sub strong { color: var(--muted); font-weight: 500; }
+
+/* COST DOTS */
+.cost-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 6px 16px; margin-top: 8px; }
+.cost-item { display: flex; align-items: center; gap: 7px; font-size: 12px; color: #B0B3C8; font-weight: 300; }
+.c-dot { width: 6px; height: 6px; border-radius: 50%; flex-shrink: 0; }
+.cost-sub { font-size: 10px; color: var(--dim); margin-top: 8px; font-weight: 300; font-family: 'DM Mono', monospace; letter-spacing: 0.02em; line-height: 1.7; }
+
+/* Bottom row special */
+.costs  { border-radius: 14px; }
+.revenue { border-radius: 14px; }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="brand">
+    <div class="logo">V</div>
+    <div class="brand-text">
+      <h1>Vitalia AI</h1>
+      <p>Plataforma de salud personalizada con inteligencia artificial</p>
+    </div>
+  </div>
+  <div class="header-tags">
+    <span class="tag highlight">Health-Tech</span>
+    <span class="tag">Seed Stage</span>
+    <span class="tag">B2C · B2B2C</span>
+    <span class="tag">LATAM</span>
+  </div>
+</div>
+
+<div class="canvas">
+
+  <!-- PARTNERS -->
+  <div class="block slate partners">
+    <div class="block-label"><span class="dot"></span>Red de Partners</div>
+    <ul class="items">
+      <li>Laboratorios clínicos (Quest, Synlab, Eurofins)</li>
+      <li>Farmacias y distribuidores farmacéuticos</li>
+      <li>Wearables: Apple Health, Garmin, Fitbit</li>
+      <li>Aseguradoras de salud y EPS</li>
+      <li>Plataformas EHR / EMR (integración HL7)</li>
+      <li>Cloud: AWS, Google Health API</li>
+      <li>Red de médicos y nutricionistas certificados</li>
+      <li>Universidades y centros de investigación clínica</li>
+    </ul>
+  </div>
+
+  <!-- ACTIVITIES -->
+  <div class="block indigo activities">
+    <div class="block-label"><span class="dot"></span>Actividades Clave</div>
+    <ul class="items">
+      <li>Desarrollo y entrenamiento de modelos IA clínicos</li>
+      <li>Análisis e interpretación de biomarcadores en tiempo real</li>
+      <li>Validación médica continua de recomendaciones</li>
+      <li>Integraciones con APIs de salud y wearables</li>
+      <li>Cumplimiento regulatorio HIPAA / ISO 27001</li>
+      <li>Adquisición y retención de usuarios (growth)</li>
+    </ul>
+  </div>
+
+  <!-- PROPUESTA DE VALOR -->
+  <div class="block blue vp">
+    <div class="block-label"><span class="dot"></span>Propuesta de Valor</div>
+    <div class="vp-card">
+      <div class="vp-headline">Tu médico de bolsillo, disponible 24/7</div>
+      <div class="vp-sub">IA que transforma datos clínicos en planes de salud concretos, personalizados y preventivos — sin citas, sin esperas.</div>
+    </div>
+    <div class="pills">
+      <span class="pill p-blue">Análisis de sangre</span>
+      <span class="pill p-blue">Biomarcadores</span>
+      <span class="pill p-teal">Nutrición personalizada</span>
+      <span class="pill p-teal">Actividad física</span>
+      <span class="pill p-purple">Medicamentos</span>
+      <span class="pill p-purple">Monitoreo de hábitos</span>
+      <span class="pill p-rose">Prevención proactiva</span>
+      <span class="pill p-rose">Historial unificado</span>
+      <span class="pill p-amber">Asistente 24/7</span>
+    </div>
+    <div class="section-divider">— diferenciadores estratégicos</div>
+    <ul class="items">
+      <li>Recomendaciones basadas en tu biología, no en promedios poblacionales</li>
+      <li>Motor IA entrenado con +40M registros clínicos anonimizados</li>
+      <li>Integración total: laboratorio + wearable + farmacia + historial médico</li>
+    </ul>
+  </div>
+
+  <!-- RELACIÓN -->
+  <div class="block teal relation">
+    <div class="block-label"><span class="dot"></span>Relación con el Cliente</div>
+    <ul class="items">
+      <li>Asistente conversacional IA generativa (24/7)</li>
+      <li>Notificaciones predictivas y nudges de salud</li>
+      <li>Comunidad y retos de bienestar gamificados</li>
+      <li>Soporte médico humano en plan Premium</li>
+      <li>Onboarding personalizado con perfil de salud inicial</li>
+    </ul>
+  </div>
+
+  <!-- SEGMENTOS -->
+  <div class="block rose segments">
+    <div class="block-label"><span class="dot"></span>Segmentos de Clientes</div>
+    <div class="section-divider">— B2C directo</div>
+    <ul class="items">
+      <li>Adultos 28–55 con interés en salud preventiva</li>
+      <li>Pacientes crónicos (diabetes, hipertensión, tiroides)</li>
+      <li>Deportistas y biohackers</li>
+      <li>Profesionales con alto estrés y poco tiempo</li>
+    </ul>
+    <div class="section-divider">— B2B2C</div>
+    <ul class="items">
+      <li>Empresas con programas de bienestar corporativo</li>
+      <li>Clínicas y consultorios médicos privados</li>
+      <li>Aseguradoras (reducción de siniestros)</li>
+    </ul>
+    <div class="kpi-row">
+      <div class="kpi"><div class="kpi-val">180M</div><div class="kpi-label">TAM LATAM</div></div>
+      <div class="kpi"><div class="kpi-val">12M</div><div class="kpi-label">SAM</div></div>
+      <div class="kpi"><div class="kpi-val">600K</div><div class="kpi-label">SOM Año 1</div></div>
+    </div>
+  </div>
+
+  <!-- RECURSOS -->
+  <div class="block purple resources">
+    <div class="block-label"><span class="dot"></span>Recursos Clave</div>
+    <ul class="items">
+      <li>Motor de IA clínica propietario (LLM + ML supervisado)</li>
+      <li>Dataset de biomarcadores y resultados de laboratorio</li>
+      <li>Equipo: ML engineers, médicos asesores, data scientists</li>
+      <li>Infraestructura cloud HIPAA-compliant</li>
+      <li>Licencias regulatorias (FDA SaMD, Cofepris)</li>
+    </ul>
+  </div>
+
+  <!-- CANALES -->
+  <div class="block cyan channels">
+    <div class="block-label"><span class="dot"></span>Canales</div>
+    <ul class="items">
+      <li>App móvil iOS / Android — canal principal de distribución</li>
+      <li>App Store y Google Play (orgánico + ASO)</li>
+      <li>Alianzas con laboratorios clínicos (co-marketing en resultados)</li>
+      <li>Plataformas de beneficios corporativos (B2B)</li>
+      <li>Contenido SEO y redes sociales de salud</li>
+      <li>API white-label para integración con EHR de clínicas</li>
+    </ul>
+  </div>
+
+  <!-- COSTOS -->
+  <div class="block slate costs">
+    <div class="block-label"><span class="dot"></span>Estructura de Costos</div>
+    <div class="cost-grid">
+      <div class="cost-item"><div class="c-dot" style="background:#818CF8"></div>Infraestructura cloud y LLM APIs (AWS, OpenAI)</div>
+      <div class="cost-item"><div class="c-dot" style="background:#A78BFA"></div>I+D — equipo de ingeniería IA y producto</div>
+      <div class="cost-item"><div class="c-dot" style="background:#FB7185"></div>Validación clínica y asesores médicos certificados</div>
+      <div class="cost-item"><div class="c-dot" style="background:#F59E0B"></div>Marketing y adquisición de usuarios (CAC)</div>
+      <div class="cost-item"><div class="c-dot" style="background:#4ADE80"></div>Cumplimiento regulatorio y legal (HIPAA, ISO)</div>
+      <div class="cost-item"><div class="c-dot" style="background:#22D3EE"></div>Soporte al cliente y operaciones (24/7)</div>
+    </div>
+    <div class="cost-sub">Modelo de costos principalmente variable &nbsp;·&nbsp; CAC objetivo &lt; $18 USD &nbsp;·&nbsp; LTV / CAC ratio &gt; 4x &nbsp;·&nbsp; Punto de equilibrio: mes 18</div>
+  </div>
+
+  <!-- INGRESOS -->
+  <div class="block green revenue">
+    <div class="block-label"><span class="dot"></span>Flujos de Ingreso</div>
+    <div class="rev-grid">
+      <div class="rev-card">
+        <div class="rev-card-label">Suscripción B2C</div>
+        <div class="rev-card-val">$9–29/mes</div>
+      </div>
+      <div class="rev-card">
+        <div class="rev-card-label">Empresa (per seat)</div>
+        <div class="rev-card-val">$6–12/user</div>
+      </div>
+      <div class="rev-card">
+        <div class="rev-card-label">API / White-label</div>
+        <div class="rev-card-val">Rev. share</div>
+      </div>
+      <div class="rev-card">
+        <div class="rev-card-label">Datos agregados</div>
+        <div class="rev-card-val">B2B insights</div>
+      </div>
+    </div>
+    <div class="rev-sub">
+      MRR target Año 1: <strong>$280K</strong> &nbsp;·&nbsp; ARR Año 2: <strong>$4.2M</strong> &nbsp;·&nbsp; Gross margin: <strong>~72%</strong> &nbsp;·&nbsp; Churn objetivo: &lt;3%/mes
+    </div>
+  </div>
+
+</div>
+</body>
+</html>
