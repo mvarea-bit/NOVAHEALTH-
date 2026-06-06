@@ -50,6 +50,14 @@ Nova Health AI centraliza toda la información de salud en una sola plataforma m
 
 
 
+
+
+
+
+
+
+
+
 📹 Video:
 https://youtu.be/OaGw4XYHOT8
 
