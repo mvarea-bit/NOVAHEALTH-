@@ -47,19 +47,3 @@ Nova Health AI centraliza toda la información de salud en una sola plataforma m
 ✔ Monitorear hábitos y bienestar diario
 ✔ Enviar recordatorios médicos automatizados
 ✔ Crear insights impulsados por inteligencia artificial
-
-
-
-
-
-
-
-
-
-
-
-📹 Video:
-https://youtu.be/OaGw4XYHOT8
-
-🎮 MVP:
-https://claude.ai/public/artifacts/714b00f2-1a42-4a51-ab99-96b2fb6a739f
