@@ -21,7 +21,7 @@ Nova funciona como un asistente virtual inteligente que analiza hábitos, interp
 📹 Explicación MVP:
 https://youtu.be/OaGw4XYHOT8
 
-📹 Vendiendo: 
+📹 Video pitch: 
 https://youtube.com/shorts/Smag6Kg3LBk
 
 🎮 MVP:
