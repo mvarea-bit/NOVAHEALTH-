@@ -18,8 +18,11 @@ Imagina una aplicación capaz de entender tu salud mejor que cualquier app tradi
 
 Nova funciona como un asistente virtual inteligente que analiza hábitos, interpreta exámenes de sangre, monitorea el estado físico y genera recomendaciones personalizadas adaptadas a cada usuario. ⚡
 
-📹 Video:
+📹 Explicación MVP:
 https://youtu.be/OaGw4XYHOT8
+
+📹 Vendiendo: 
+https://youtube.com/shorts/Smag6Kg3LBk
 
 🎮 MVP:
 https://claude.ai/public/artifacts/714b00f2-1a42-4a51-ab99-96b2fb6a739f
